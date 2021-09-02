@@ -24,7 +24,7 @@ count = 0
 with jsonlines.open('od-do-canada.jsonl') as reader:
     for obj in reader:
       for res in obj['resources']:
-        if "https:" in res['url']:
+        if "http:" in res['url']:
           urls_d[obj['organization']['title']] += 1
       if count % 1000 == 0:
         print('Processing dataset #{}'.format(count))
