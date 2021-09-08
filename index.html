@@ -19,6 +19,7 @@
           <p>The table below shows an up to date number of occurrences of "http:" in the resource links of all the datasets found in the <a href="https://search.open.canada.ca/en/od/">Open Government</a> search, sorted by organinization.</p>
         </div>
       </div>
+      <a href="org_http_resources.html">orgs table</a>
       <div class="row">
         <div class="col-md-12">
           <table id="data-table" class="table table-striped table-bordered" style="margin-top: 30px;">
@@ -26,6 +27,7 @@
               <tr>
                 <th>Organization</th>
                 <th>HTTP count</th>
+                <th>HTTP list</th>
               </tr>
             </thead>
           </table>
@@ -42,7 +44,7 @@
         var table = $('#data-table')
         var tbody = table.append('<tbody/>');
         $.each(data, function(key, value){
-            tbody.append('<tr><td>'+key+'</td><td>'+value+'</td></tr>');
+            tbody.append('<tr><td>'+key+'</td><td>'+value+'</td><td><a href="org_http_resources.html?'+key+'">View list</a></td></tr>');
         });
       });
     </script>
