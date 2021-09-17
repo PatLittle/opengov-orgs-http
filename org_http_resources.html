@@ -14,10 +14,10 @@
       <div class="page-header">
         <h1>Canada Open Government</h1>
       </div>
-      <h2 class="h3" style="margin-top: 30px;">Count of <i>"http"</i> occurrences in datasets</h2>
+      <h2 class="h3" style="margin-top: 30px;"></h2>
       <div class="row">
         <div class="col-md-8">
-          <p>The table below shows an up to date number of occurrences of "http:" in the resource links of all the datasets found in the <a href="https://search.open.canada.ca/en/od/">Open Government</a> search, sorted by organinization.</p>
+          <p>The table below displays an up to date list of "http:" and "ftp:" in the resource links of all the datasets found in the <a href="https://search.open.canada.ca/en/od/">Open Government</a> search.</p>
         </div>
       </div>
       <div class="row">
@@ -27,6 +27,7 @@
                 <tr>
                     <th>Dataset Name</th>
                     <th>Resource URL</th>
+                    <th>URL type</th>
                     <th>View dataset</th>
                     <th>Edit Resource</th>
                 </tr>
@@ -41,56 +42,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/r/dt/dt-1.10.22/datatables.min.js"></script>
-    <script>
-      $( document ).ready(function() {
-        getDataForDatatables();
-    });
-    
-    function getDataForDatatables(){
-
-     var url = window.location.href;
-     var org_id = decodeURIComponent(url.split("?").pop());
-
-     $.getJSON( "orgs_http_data.json", function( data ) {
-      setDataToTable(data[org_id]);
-      });
-    }
-    
-    function setDataToTable(jsonData){
-      $('#employee').DataTable( {
-        "autoWidth": true,
-     pagination: "bootstrap",
-        filter:true,
-        data: jsonData,
-        destroy: true,
-        pageLength: 10,
-        "columns":[  
-                    {     "data"     :     "dataset"},
-                    {     "data"     :     "url"},
-                    {     "data"     :     "dataset_id"},
-                    {     "data"     :     "id"},  
-               ],
-        columnDefs: [
-        { "width": "30%", "targets": 0 },
-              {
-              targets: 2,
-              render: function (data, type, row, meta)
-              {
-
-                  data = '<a href="https://open.canada.ca/data/en/dataset/' + data + '">View dataset</a>';
-                  return data;
-              }
-              },
-              {
-              targets: 3,
-              render: function (data, type, row, meta)
-              {
-                  data = '<a href="https://registry.open.canada.ca/en/dataset/' + row.dataset_id + '/resource_edit/' + data + '">Edit resource</a>';
-                  return data;
-              }
-              }],
-      } );
-    }
-    </script>
+    <script type="text/javascript" src="./load_org_details.js"></script>
   </body>
 </html>
