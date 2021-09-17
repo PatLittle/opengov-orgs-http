@@ -45,11 +45,6 @@ $.getJSON( "orgs_with_http.json", function( jsonData ) {
 
 //custom sort the http_count string
 $.fn.dataTable.ext.type.order['count-percentage-pre'] = function ( data ) {
-
-  // var percent = data.substring(
-  //   data.indexOf("(") + 1, 
-  //   data.lastIndexOf("%")
-  // );
   if (data.indexOf(' ') != -1) {
     return parseInt(data.split(' ')[0]);
   }

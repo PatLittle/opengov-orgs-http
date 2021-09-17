@@ -12,16 +12,16 @@ def get_org_index(list, name):
 			return i
 	return -1
 
-# # download file
-# print("Downloading od-do-canada.jsonl.gz...")
-# url = 'https://open.canada.ca/static/od-do-canada.jsonl.gz'
-# r = requests.get(url, allow_redirects=True)
-# open('od-do-canada.jsonl.gz', 'wb').write(r.content)
+# download file
+print("Downloading od-do-canada.jsonl.gz...")
+url = 'https://open.canada.ca/static/od-do-canada.jsonl.gz'
+r = requests.get(url, allow_redirects=True)
+open('od-do-canada.jsonl.gz', 'wb').write(r.content)
 
-# #unzip file
-# print('Unzipping od-do-canada.jsonl.gz...')
-# with gzip.open('od-do-canada.jsonl.gz', 'r') as f_in, open('od-do-canada.jsonl', 'wb') as f_out:
-#   shutil.copyfileobj(f_in, f_out)
+#unzip file
+print('Unzipping od-do-canada.jsonl.gz...')
+with gzip.open('od-do-canada.jsonl.gz', 'r') as f_in, open('od-do-canada.jsonl', 'wb') as f_out:
+  shutil.copyfileobj(f_in, f_out)
 
 # count occurences of 'http:' in resource links per organization
 print('Counting occurences of "http" in resource links...')
