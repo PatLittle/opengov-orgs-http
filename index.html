@@ -5,22 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Canada Open Government</title>
+    <link
+      href="themes-dist-5.0.1/GCWeb/assets/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="themes-dist-5.0.1/GCWeb/css/theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/dt-1.10.22/datatables.min.css"/>
   </head>
   <body>
-    <div class="container theme-showcase" role="main" style="margin: 5% auto;">
-
-      <div class="page-header">
-        <h1>Canada Open Government</h1>
+    <header>
+      <div id="wb-bnr" class="container">
+        <div class="row" style="margin-top: 10px;">
+          <div class="brand col-xs-5 col-md-4">
+            <a href="https://www.canada.ca/en.html"
+              ><img
+                src="themes-dist-5.0.1/GCWeb/assets/sig-blk-en.svg"
+                alt=""
+              /><span class="wb-inv">
+                Government of Canada /
+                <span lang="fr">Gouvernement du Canada</span></span
+              ></a
+            >
+          </div>
+        </div>
       </div>
-      <h2 class="h3" style="margin-top: 30px;">Count of <i>"http"</i> and <i>"ftp"</i> occurrences in datasets</h2>
-      <div class="row">
+      
+    </header>
+    <div class="container theme-showcase" role="main" style="margin: 4% auto;">
+
+      <div >
+        <h1><i>"http"</i> and <i>"ftp"</i> occurrences in datasets</h1>
+      </div>
+      <div class="row" style="margin-top: 30px;">
         <div class="col-md-10">
           <p>While the HTTPS protocol was always recommended for sites to use, the Google Chrome web browser has been blocking mixed content on websites. A mixed content refers to 
             secured sites through the HTTPS protocol, but contains elements or resources that are hosted in a non-secure site (through HTTP or FTP). It is therefore highly recommended to update all HTTP and FTP links to an HTTPS alternative.
           </p>
-          <p>The table below shows an up to date number of occurrences of "http:" and "ftp:" in the resource links of all the datasets found in the <a href="https://search.open.canada.ca/en/od/">Open Government</a> search, sorted by organinization.</p>
+          <p>The table below shows an up to date number of occurrences of "http:" and "ftp:" in the resource links of all the datasets found in the <a target="_blank" href="https://search.open.canada.ca/en/od/">Open Government</a> search, sorted by organinization.</p>
         </div>
       </div>
       <div class="row" style="margin-top: 30px;">
