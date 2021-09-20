@@ -5,24 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Canada Open Government</title>
+    <link
+      href="themes-dist-5.0.1/GCWeb/assets/favicon.ico"
+      rel="icon"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="themes-dist-5.0.1/GCWeb/css/theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/dt-1.10.22/datatables.min.css"/>
   </head>
   <body>
+    <header>
+      <div id="wb-bnr" class="container">
+        <div class="row" style="margin-top: 10px;">
+          <div class="brand col-xs-5 col-md-4">
+            <a href="https://www.canada.ca/en.html"
+              ><img
+                src="themes-dist-5.0.1/GCWeb/assets/sig-blk-en.svg"
+                alt=""
+              /><span class="wb-inv">
+                Government of Canada /
+                <span lang="fr">Gouvernement du Canada</span></span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
     <div class="container theme-showcase" role="main" style="margin: 5% auto;">
 
-      <div class="page-header">
+      <div>
         <h1>Canada Open Government</h1>
       </div>
-      <h2 class="h3" style="margin-top: 30px;"></h2>
+      <h2 class="h3" style="margin-top: 30px;">List of all <i>"http"</i> and <i>"ftp"</i> urls</h2>
       <div class="row">
-        <div class="col-md-8">
-          <p>The table below displays an up to date list of "http:" and "ftp:" in the resource links of all the datasets found in the <a href="https://search.open.canada.ca/en/od/">Open Government</a> search.</p>
+        <div class="col-md-10">
+          <p>The table below displays an up to date list of "http:" and "ftp:" in the resource links of all the datasets found in the <a target="_blank" href="https://search.open.canada.ca/en/od/">Open Government</a> search.</p>
+          <p>Please keep in mind that before clicking on 'edit resource' you must first sign in to the Open Government Registry portal on your browser.</p>
         </div>
       </div>
       <div class="row">
         <div style="margin-top: 30px;" class="col-md-12">
-          <table id="employee" class="display" cellspacing="0" width="100%">
+          <table id="org-details" id="data-table" class="table table-condensed table-striped  table-hover" cellspacing="0" width="100%">
             <thead>
                 <tr>
                     <th>Dataset Name</th>

@@ -6,7 +6,7 @@ $.getJSON( "orgs_with_http.json", function( jsonData ) {
     filter:true,
     data: jsonData,
     destroy: true,
-    pageLength: 100,
+    pageLength: 25,
     "columns":[  
       {"data": "org"},
       {"data": "http_count"},
