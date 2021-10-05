@@ -10,11 +10,15 @@ var org_name = org_id.split('|')[0].trim();
 $('h1').html(org_name)
 
 $.getJSON( "orgs_http_data.json", function( data ) {
-setDataToTable(data[org_id]);
+  $.getJSON( "https_alternative_count.json", function( data2 ) {
+    var el = data2.find(obj => obj['org'] == org_id);
+    var https_alts = el ? el['urls'] : [];
+    setDataToTable(data[org_id], https_alts);
+  });
 });
 }
 
-function setDataToTable(jsonData){
+function setDataToTable(jsonData, https_alts){
 $('#org-details').DataTable( {
   "autoWidth": false,
   pagination: "bootstrap",
@@ -30,9 +34,17 @@ $('#org-details').DataTable( {
     {"data": "id", width: '10%'},
   ],
   columnDefs: [
-    {"className": "dt-center", "targets": [2,3,4] },
+    {"className": "dt-center", "targets": [2,3,4,5] },
     {
-    targets: 3,
+      targets: 3,
+      render: function (data, type, row, meta)
+      {
+        data = https_alts.indexOf(row.url) < 0 ? 'No': 'Yes';
+        return data;
+      }
+    },
+    {
+    targets: 4,
     render: function (data, type, row, meta)
     {
 
@@ -41,7 +53,7 @@ $('#org-details').DataTable( {
     }
     },
     {
-    targets: 4,
+    targets: 5,
     render: function (data, type, row, meta)
     {
       if (row.from_registry) {
