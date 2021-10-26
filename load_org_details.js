@@ -39,8 +39,8 @@ $('#org-details').DataTable( {
       targets: 3,
       render: function (data, type, row, meta)
       {
-        data = https_alts.indexOf(row.url) < 0 ? 'No': 'Yes';
-        return data;
+        isValid = https_alts.indexOf(row.url) < 0 ? 'No': 'Yes';
+        return isValid;
       }
     },
     {
@@ -48,7 +48,7 @@ $('#org-details').DataTable( {
     render: function (data, type, row, meta)
     {
 
-      data = '<a target="_blank" href="https://open.canada.ca/data/en/dataset/' + data + '">View dataset</a>';
+      data = '<a target="_blank" href="https://open.canada.ca/data/en/dataset/' + row.dataset_id + '">View dataset</a>';
       return data;
     }
     },
@@ -57,7 +57,7 @@ $('#org-details').DataTable( {
     render: function (data, type, row, meta)
     {
       if (row.from_registry) {
-        return '<a target="_blank" class="btn btn-primary" href="https://registry.open.canada.ca/en/dataset/' + row.dataset_id + '/resource_edit/' + data + '">Edit resource</a>';
+        return '<a target="_blank" class="btn btn-primary" href="https://registry.open.canada.ca/en/dataset/' + row.dataset_id + '/resource_edit/' + row.id + '">Edit resource</a>';
       }
       return 'N/A';
     }
