@@ -1,6 +1,7 @@
 name: update-http-csv
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 4 * * *'
 
