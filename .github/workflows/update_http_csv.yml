@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: some-branch
+        ref: gh-pages
 
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
