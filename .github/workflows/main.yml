@@ -27,9 +27,6 @@ jobs:
         
     - name: Run http count script
       run: python count_orgs_http.py
-    
-    - name: Run script to add numbers csv file
-      run: python record_http_stats.py
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
