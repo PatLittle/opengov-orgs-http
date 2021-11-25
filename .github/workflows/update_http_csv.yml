@@ -19,8 +19,7 @@ jobs:
     - name: Run script to add numbers csv file
       run: python record_http_stats.py
 
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.6.1
+    - name: push updated csv file to main branch
+      uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
+        commit_message: Auto update orgs_http_stats.csv file
