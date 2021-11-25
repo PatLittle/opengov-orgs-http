@@ -2,8 +2,9 @@ name: update-http-csv
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron:  '0 4 * * *'
+  push:
+    branches:
+    - gh-pages
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
