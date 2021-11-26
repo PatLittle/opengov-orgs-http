@@ -1,0 +1,29 @@
+name: update http csv log
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron:  '40 3 * * *'
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+
+    - name: Run script to add numbers csv file
+      run: python record_http_stats.py
+      
+    - name: Update http csv log
+      uses: test-room-7/action-update-file@v1
+      with:
+          file-path: orgs_http_stats.csv
+          commit-msg: Automated update of csv log
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
+    
