@@ -33,5 +33,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3.6.1
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        exclude_assets: '.github,**.csv'
+        exclude_assets: 'orgs_http_stats.csv'
         publish_dir: ./
