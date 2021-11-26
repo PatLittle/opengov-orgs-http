@@ -6,8 +6,6 @@ on:
   push:
     branches:
     - main
-  schedule:
-    - cron:  '30 3 * * *'
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
@@ -15,19 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.8
-
-    - name: Install dependencies
-      run: |
-        pip install jsonlines
-        pip install requests
-        
-    - name: Run http count script
-      run: python count_orgs_http.py
 
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
