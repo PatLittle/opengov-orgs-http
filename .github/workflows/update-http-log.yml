@@ -15,6 +15,14 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
+        
+    - name: Install dependencies
+      run: |
+        pip install jsonlines
+        pip install requests
+        
+    - name: Run http count script
+      run: python count_orgs_http.py
 
     - name: Run script to add numbers csv file
       run: python record_http_stats.py
