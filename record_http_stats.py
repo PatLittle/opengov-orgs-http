@@ -2,6 +2,8 @@ import csv
 import json
 from datetime import datetime
 
+# Take all the data generated everyday and append it to a csv file for future analytics
+
 input_file = open('orgs_with_http.json')
 dep_array = json.load(input_file)
 date = datetime.today().strftime('%Y-%m-%d')
