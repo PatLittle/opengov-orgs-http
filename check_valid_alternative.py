@@ -1,6 +1,9 @@
 import requests
 import json
 
+# loops through all http and ftp links and test if there is a valid https alternative URL already.
+# output is saved in a json file, to be later consumed by the javascript files on page load.
+
 f = open('orgs_http_data.json')
 data = json.load(f)
 
