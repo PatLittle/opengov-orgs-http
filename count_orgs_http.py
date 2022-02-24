@@ -55,7 +55,8 @@ with jsonlines.open('od-do-canada.jsonl') as reader:
           'id': res['id'],
           'dataset': obj['title'],
           'dataset_id': obj['id'],
-          'from_registry': 'portal_release_date' in obj and 'geogratis' not in obj['collection'] and 'federated' not in obj['collection']
+          'from_registry': 'portal_release_date' in obj and 'geogratis' not in obj['collection'] and 'federated' not in obj['collection'],
+          'collection': obj['collection'],
         }
         urls_info.append(data)
 
@@ -70,7 +71,8 @@ with jsonlines.open('od-do-canada.jsonl') as reader:
           'id': res['id'],
           'dataset': obj['title'],
           'dataset_id': obj['id'],
-          'from_registry': 'portal_release_date' in obj and 'geogratis' not in obj['collection'] and 'federated' not in obj['collection']
+          'from_registry': 'portal_release_date' in obj and 'geogratis' not in obj['collection'] and 'federated' not in obj['collection'],
+          'collection': obj['collection'],
         }
         urls_info.append(data)
     if count % 1000 == 0:
